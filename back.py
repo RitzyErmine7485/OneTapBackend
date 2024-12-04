@@ -48,5 +48,9 @@ def get_data():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/hello_world', methods=['GET'])
+def hello_world():
+    return jsonify(message = "Hello World!"), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
